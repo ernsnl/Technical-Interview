@@ -1,0 +1,30 @@
+Question 1
+------------------
+Anagrams are the rearrangement of the letters in a word. In this question,
+best way to find is counting the  letters occurrence in both words. After occurrence is equal or less,
+we are sure that substring is an anagram.
+
+Question 2
+-------------------
+Manacher's algorithm is designed to find a longest palindromic string in given string.
+In the implementation, boundaries start from the edges of the string and shortens with each iteration.
+First looks 0 n-1, and 1 n
+Then shortens it 0 n-2, 1 n-1, and 2 n
+So on and so forth.
+
+Question 3
+-------------------
+There are popular algorithms for minimum spanning tree; Prim's and Kruskal's algorithm.
+In this question, Prim's Algorithm is chosen. Prims algorithm is based on the minimum edge values. It can start
+from any where in the graph. For convenience, it starts from the first node.
+
+Question 4
+-------------------
+Using Binary Search Tree property that if a value is bigger than the compared node place it on the right.
+If it is smaller than compared node placed it on the left. We can iterate over whole the until they are on the
+different sides. We can find the solution with one iteration if the tree.
+
+Question 5
+-------------------
+We are given a linked list starting node but we do not know the length of the list. First we need to calculate
+the length, then based on that value we can find the requested node.
