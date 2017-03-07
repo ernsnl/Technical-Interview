@@ -4,6 +4,10 @@ Anagrams are the rearrangement of the letters in a word. In this question,
 best way to find is counting the  letters occurrence in both words. After occurrence is equal or less,
 we are sure that substring is an anagram.
 
+-- Time Complexity ==> Iterating the bigger for counting the numbers (m) and iterating the smaller string (n).
+Therefore O(n+m) --- O(m)
+-- Space Complexity ==> we need extra storage for counting numbers which takes (m). -- O(m)
+
 Question 2
 -------------------
 Manacher's algorithm is designed to find a longest palindromic string in given string.
@@ -12,11 +16,20 @@ First looks 0 n-1, and 1 n
 Then shortens it 0 n-2, 1 n-1, and 2 n
 So on and so forth.
 
+-- Time Complexity ==> O(n) --- With each boundary we are not iterating the same string over and over again
+we are just shifting the boundaries therefore time complexity becomes O(n)
+-- Space Complexity ==> There is no extra space is needed because we are not storing any values O(1)
+
 Question 3
 -------------------
 There are popular algorithms for minimum spanning tree; Prim's and Kruskal's algorithm.
 In this question, Prim's Algorithm is chosen. Prims algorithm is based on the minimum edge values. It can start
 from any where in the graph. For convenience, it starts from the first node.
+
+--- Time Complexity ==> O(|E|log(|V|)) --- E represent the edges and V represent vertex (nodes). Until the minimum
+spanning tree is complete, we are only iterating the nodes that we visit and in those nodes only we are interested in
+the ones are connecting in the nodes that we haven't visited yet.
+--- Space Complexity ==> O(V) --- We need to store only the minimum spanning.
 
 Question 4
 -------------------
@@ -24,7 +37,15 @@ Using Binary Search Tree property that if a value is bigger than the compared no
 If it is smaller than compared node placed it on the left. We can iterate over whole the until they are on the
 different sides. We can find the solution with one iteration if the tree.
 
+--- Time Complexity ==> O(log(n)) --- In this question, we are searching a node that divides the investigated nodes.
+Searching in the binary tree has a time complexity of log(n)
+--- Space Complexity ==> O(1) --- We are only interested in the node value not the path leading up to the node.
+
 Question 5
 -------------------
 We are given a linked list starting node but we do not know the length of the list. First we need to calculate
 the length, then based on that value we can find the requested node.
+
+--- Time Complexity ==> O(n) --- In this question, we don't know the length of the linked list. So we have to iterate
+the linked list.
+--- Space Complexity ==> O(1) --- We are only storing the length of the linked list.

@@ -145,10 +145,30 @@ def findClosestParent(node, n1, n2):
         return findClosestParent(node.right, n1, n2)
 
 
-def question4(tree, r, n1, n2):
+def question4_legacy(tree, r, n1, n2):
     root = TreeNode(True, r)
     root = placeNode(tree, root)
     return findClosestParent(root, n1, n2)
+
+def question4(tree, root, node1, node2):
+    current_node = root
+    while(True):
+        if current_node > node1 and current_node > node2:
+            # first encounter with smallest node
+            for i in range(0, current_node):
+                if tree[current_node][i] == 1:
+                    current_node = i
+                    break
+        elif current_node < node1 and current_node < node2:
+            # first encounter with largest node
+            for i in range(current_node, len(tree[current_node])):
+                if tree[current_node][i] == 1:
+                    current_node = i
+                    break
+        elif node1 > current_node and node2 < current_node or node1 < current_node and node2 > current_node:
+            return current_node
+        elif node1 == current_node or node2 == current_node:
+            return current_node
 
 # Udacity Problem
 assert question4([[0, 1, 0, 0, 0],
